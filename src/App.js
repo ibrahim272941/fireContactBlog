@@ -9,9 +9,9 @@ import {
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { signOut } from "firebase/auth";
-import { auth, db } from "./firebase/firebaseConfig";
+import { auth } from "./firebase/firebaseConfig";
 import Register from "./pages/Register";
 import Details from "./pages/Details";
 

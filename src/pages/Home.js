@@ -19,8 +19,11 @@ const Home = ({ isAuth }) => {
       postText,
       author: { name },
     } = details[0];
-    console.log(details);
-    navigate("/details", { state: { title, url, postText, name } });
+    {
+      isAuth
+        ? navigate("/details", { state: { title, url, postText, name } })
+        : alert("pls login or register");
+    }
   };
   useEffect(() => {
     getPost();
@@ -65,7 +68,9 @@ const Home = ({ isAuth }) => {
               </div>
               <div className="postTextContainer">{post.postText}</div>
             </div>
-            <p onClick={() => handleDetails(post.id)}>Details</p>
+            <p className="detailsLink" onClick={() => handleDetails(post.id)}>
+              Details
+            </p>
           </div>
         );
       })}
