@@ -13,7 +13,6 @@ const Home = ({ isAuth }) => {
   const getPost = async () => {
     const data = await getDocs(postCollectionRef);
     setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    console.log(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
   const deletePost = async (id) => {

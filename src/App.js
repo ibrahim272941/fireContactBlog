@@ -12,6 +12,7 @@ import CreatePost from "./pages/CreatePost";
 import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase/firebaseConfig";
+import Register from "./pages/Register";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -29,7 +30,10 @@ function App() {
         <Link to="/">Home</Link>
 
         {!isAuth ? (
-          <Link to="/login">Login</Link>
+          <>
+            <Link to="/register">Register</Link>
+            <Link to="/login">Login</Link>
+          </>
         ) : (
           <>
             <Link to="/createpost">Create Post</Link>
@@ -40,6 +44,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
+        <Route path="/register" element={<Register setIsAuth={setIsAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
       </Routes>
     </Router>
