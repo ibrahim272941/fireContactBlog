@@ -9,10 +9,11 @@ import {
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
-import { auth } from "./firebase/firebaseConfig";
+import { auth, db } from "./firebase/firebaseConfig";
 import Register from "./pages/Register";
+import Details from "./pages/Details";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -24,6 +25,7 @@ function App() {
       window.location.pathname = "/login";
     });
   };
+
   return (
     <Router>
       <nav>
@@ -46,6 +48,7 @@ function App() {
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
         <Route path="/register" element={<Register setIsAuth={setIsAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
+        <Route path="/details" element={<Details />} />
       </Routes>
     </Router>
   );

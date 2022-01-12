@@ -155,15 +155,24 @@ textarea {
 }
 
 .homePage .post {
-  width: 600px;
+  width: 400px;
   height: auto;
-  max-height: 600px;
+  max-height: 400px;
   background-color: rgb(250, 250, 250);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 20px;
   padding: 20px;
   border-radius: 15px;
   word-wrap: break-word;
+  overflow: hidden;
+}
+
+.mainPost {
+  background-color: rgb(250, 250, 250);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 20px;
+  border-radius: 1rem;
+
 }
 
 .post .postHeader {
@@ -173,8 +182,10 @@ textarea {
 
 }
 
-.postHeader .title {
+.postHeader .title h1 {
   flex: 50%;
+  font-size: 1.5rem;
+  font-weight: 800;
 }
 
 .postHeader .deletePost {
@@ -198,7 +209,8 @@ textarea {
   max-height: 400px;
   width: 100%;
   overflow: hidden;
-  overflow-y: auto;
+
+  font-size: .9rem;
 }
 
 .imageContainer {
