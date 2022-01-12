@@ -8,8 +8,8 @@ const Details = () => {
   const name = location.state.name;
   const postText = location.state.postText;
   return (
-    <div>
-      <div className="post">
+    <div className="detailsPage">
+      <div className="detailsPost">
         <div className="mainPost"></div>
         <div className="postHeader">
           <div className="title">
@@ -17,7 +17,7 @@ const Details = () => {
             <h6>{name}</h6>
           </div>
         </div>
-        <div className="imageContainer">
+        <div className="postImg">
           <img src={url} alt="" />
         </div>
         <div className="postTextContainer">{postText}</div>

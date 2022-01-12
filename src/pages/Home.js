@@ -69,7 +69,7 @@ const Home = ({ isAuth }) => {
               <div className="postTextContainer">{post.postText}</div>
             </div>
             <p className="detailsLink" onClick={() => handleDetails(post.id)}>
-              Details
+              Read More
             </p>
           </div>
         );
