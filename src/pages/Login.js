@@ -28,10 +28,13 @@ const Login = ({ setIsAuth }) => {
   };
 
   return (
-    <>
+    <div className="register">
+      {/* <div className="form-image">
+        <img src={"https://picsum.photos/800/800"} alt="sample-movie" />
+      </div> */}
       <div className="register-form">
         <h1 className="form-title display-3">Login</h1>
-        <form id="login">
+        <form id="login" className="form-control">
           <div className="mb-3">
             <label for="email" className="form-label display-4">
               Email
@@ -62,15 +65,12 @@ const Login = ({ setIsAuth }) => {
             value="Login"
             onClick={handleSubmit}
           />
+          <button onClick={signInWithGoogle} className="login-with-google-btn">
+            Sign in with Google
+          </button>
         </form>
       </div>
-      <div className="loginPage">
-        <p>Sign In With Google to Continue</p>
-        <button onClick={signInWithGoogle} className="login-with-google-btn">
-          Sign in with Google
-        </button>
-      </div>
-    </>
+    </div>
   );
 };
 

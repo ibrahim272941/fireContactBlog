@@ -26,11 +26,11 @@ const Register = ({ setIsAuth }) => {
 
   return (
     <div className="register">
-      <div className="form-image">
+      {/* <div className="form-image">
         <img src={"https://picsum.photos/800/800"} alt="sample-movie" />
-      </div>
+      </div> */}
       <div className="register-form">
-        <h1 className="form-title display-3">Register</h1>
+        <h4 className="form-title display-3">Register</h4>
         <form id="register">
           <div className="mb-3">
             <label for="first-name" className="form-label display-4">
