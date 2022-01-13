@@ -29,19 +29,26 @@ function App() {
   return (
     <Router>
       <nav>
-        <Link to="/">Home</Link>
+        <div className="navTitle">
+          <h1>FIRE ~ BLOG</h1>
+        </div>
+        <div className="navNavigate">
+          <Link to="/">Home</Link>
 
-        {!isAuth ? (
-          <>
-            <Link to="/register">Register</Link>
-            <Link to="/login">Login</Link>
-          </>
-        ) : (
-          <>
-            <Link to="/createpost">Create Post</Link>
-            <button onClick={signUserOut}>Log Out</button>
-          </>
-        )}
+          {!isAuth ? (
+            <>
+              <Link to="/register">Register</Link>
+              <Link to="/login">Login</Link>
+            </>
+          ) : (
+            <>
+              <Link to="/createpost">Create Post</Link>
+              <button className="signOut" onClick={signUserOut}>
+                Log Out
+              </button>
+            </>
+          )}
+        </div>
       </nav>
       <Routes>
         <Route path="/" element={<Home isAuth={isAuth} />} />

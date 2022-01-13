@@ -8,7 +8,8 @@ const Login = ({ setIsAuth }) => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       let user = await signInWithEmailAndPassword(auth, email, password);
       console.log(user);
@@ -65,10 +66,10 @@ const Login = ({ setIsAuth }) => {
             value="Login"
             onClick={handleSubmit}
           />
-          <button onClick={signInWithGoogle} className="login-with-google-btn">
-            Sign in with Google
-          </button>
         </form>
+        <button onClick={signInWithGoogle} className="login-with-google-btn">
+          Sign in with Google
+        </button>
       </div>
     </div>
   );

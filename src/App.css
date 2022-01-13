@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Cambo&family=Luxurious+Roman&family=Merriweather:wght@300&family=Mitr:wght@500&family=Playfair+Display&family=Skranji&display=swap');
+
 .App {
   text-align: center;
+  background-image: linear-gradient(to right, rgb(34, 32, 32), rgb(51, 32, 32));
 }
 
 body {
@@ -12,14 +15,28 @@ nav {
   margin: 0;
   width: 100%;
   height: 80px;
-  background-color: rgb(82, 80, 80);
+  background-color: rgb(29, 25, 25);
+  background-image: linear-gradient(to right, rgb(34, 32, 32), rgb(51, 32, 32));
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   color: white;
   text-decoration: none;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04),
     0 1px 1px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  font-family: 'Luxurious Roman',
+    cursive;
+
+}
+
+.navTitle {
+
+
+  padding: .3rem;
+
+  font-family: 'Skranji',
+    cursive;
 }
 
 a {
@@ -27,6 +44,16 @@ a {
   text-decoration: none;
   margin: 10px;
   font-size: 25px;
+}
+
+.signOut {
+  padding: .4rem;
+  background-image: linear-gradient(to right, rgb(34, 32, 32), rgb(51, 32, 32));
+  color: #ebebeb;
+  font-weight: 600;
+  font-size: 1.3rem;
+  border-radius: 1rem;
+
 }
 
 .createPostPage {
@@ -121,8 +148,8 @@ textarea {
   background-color: white;
   background-repeat: no-repeat;
   background-position: 12px 11px;
-  width: 90%;
-  margin-left: 1.3rem;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 .login-with-google-btn:hover {
@@ -154,10 +181,11 @@ textarea {
   flex-wrap: wrap;
   align-items: center;
   padding-top: 20px;
+  background-image: linear-gradient(to right, rgb(229, 226, 226), rgb(243, 237, 237));
 }
 
 .homePage .post {
-  width: 400px;
+  width: 20rem;
   height: auto;
   max-height: 400px;
   background-color: rgb(250, 250, 250);
@@ -167,6 +195,7 @@ textarea {
   border-radius: 15px;
   word-wrap: break-word;
   overflow: hidden;
+  background-image: linear-gradient(to right, rgb(229, 226, 226), rgb(243, 237, 237));
 }
 
 .mainPost {
@@ -174,6 +203,7 @@ textarea {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 20px;
   border-radius: 1rem;
+  background-image: linear-gradient(to right, rgb(229, 226, 226), rgb(243, 237, 237));
 
 }
 
@@ -186,7 +216,7 @@ textarea {
 
 .postHeader .title h1 {
   flex: 50%;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 800;
 }
 
@@ -220,25 +250,51 @@ textarea {
   height: auto;
   max-height: 400px;
   width: 100%;
-  overflow: hidden;
-  overflow-y: auto;
+
+  margin: .6rem 0;
+  text-align: center;
 }
 
 .imageContainer img {
-  height: 10rem;
+  height: 8rem;
+  width: 70%;
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.25);
+
+}
+
+.detailsLink {
+  margin: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  background-image: linear-gradient(to right, rgb(61, 32, 32), rgb(51, 32, 32));
+  color: #ebebeb;
+  padding: .6rem;
+  border-radius: 1rem;
+}
+
+.detailsLink:hover {
+  transition: .4s all ease-in-out;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: .6rem;
+  background: white;
+  color: rgb(61, 32, 32);
 }
 
 /* Login form*/
 
 .form-control {
-  width: 300px;
-  margin: 20px;
+
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
 }
 
 .register {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+  margin-top: 2rem;
   height: 100vh;
 
 }
@@ -261,10 +317,7 @@ textarea {
   font-size: 1rem;
 }
 
-.form-control {
-  width: 90%;
-
-}
+.form-control {}
 
 .form-title {
   text-align: center;

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Home = ({ isAuth }) => {
   const [postList, setPostList] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const navigate = useNavigate();
   const postCollectionRef = collection(db, "posts");
@@ -37,44 +38,65 @@ const Home = ({ isAuth }) => {
     const postDoc = doc(db, "posts", id);
     await deleteDoc(postDoc);
   };
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const result = postList.filter((post) => {
+      return searchTerm !== ""
+        ? post.title.toLowerCase().includes(searchTerm)
+        : post;
+    });
+    setPostList(result);
+    setSearchTerm("");
+  };
   return (
-    <div className="homePage">
-      {postList.map((post, i) => {
-        return (
-          <div key={i} className="mainPost">
-            <div className="post">
-              <div className="mainPost"></div>
-              <div className="postHeader">
-                <div className="title">
-                  <h1>{post.title}</h1>
-                  <h6>{post.author.name}</h6>
-                </div>
+    <>
+      <div className="search">
+        <form action="" onSubmit={handleSubmit}>
+          <input
+            onChange={(e) => setSearchTerm(e.target.value)}
+            value={searchTerm}
+            type="text"
+            placeholder="Search Thema"
+          />
+        </form>
+      </div>
+      <div className="homePage">
+        {postList.map((post, i) => {
+          return (
+            <div key={i} className="mainPost">
+              <div className="post">
+                <div className="mainPost"></div>
+                <div className="postHeader">
+                  <div className="title">
+                    <h1>{post.title}</h1>
+                    <h6>{post.author.name}</h6>
+                  </div>
 
-                <div className="deletePost">
-                  {isAuth && post.author.id === auth.currentUser.uid && (
-                    <button
-                      onClick={() => {
-                        deletePost(post.id);
-                      }}
-                    >
-                      &#128465;
-                    </button>
-                  )}
+                  <div className="deletePost">
+                    {isAuth && post.author.id === auth.currentUser.uid && (
+                      <button
+                        onClick={() => {
+                          deletePost(post.id);
+                        }}
+                      >
+                        &#128465;
+                      </button>
+                    )}
+                  </div>
                 </div>
+                <div className="imageContainer">
+                  <img src={post.url} alt="" />
+                </div>
+                <div className="postTextContainer">{post.postText}</div>
               </div>
-              <div className="imageContainer">
-                <img src={post.url} alt="" />
-              </div>
-              <div className="postTextContainer">{post.postText}</div>
+              <p className="detailsLink" onClick={() => handleDetails(post.id)}>
+                Read More
+              </p>
             </div>
-            <p className="detailsLink" onClick={() => handleDetails(post.id)}>
-              Read More
-            </p>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
