@@ -8,18 +8,8 @@ const CreatePost = ({ isAuth }) => {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [media, setMedia] = useState("");
-  const [path, setPath] = useState("");
-  console.log(media.name);
-  const navigate = useNavigate();
 
-  // const uploadImg = async () => {
-  //   const imgRef = ref(storage, `media/${media.name}`);
-  //   const snap = await uploadBytes(imgRef, media);
-  //   const url = await getDownloadURL(ref(storage, snap.ref.fullPath));
-  //   console.log(snap.ref.fullPath);
-  //   setPath(url);
-  //   console.log(url);
-  // };
+  const navigate = useNavigate();
   const postCollectionRef = collection(db, "posts");
   const createPost = async () => {
     const imgRef = ref(storage, `media/${media.name}`);

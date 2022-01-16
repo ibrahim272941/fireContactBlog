@@ -46,6 +46,26 @@ a {
   font-size: 25px;
 }
 
+.search {
+  background-image: linear-gradient(to right, rgb(229, 226, 226), rgb(243, 237, 237));
+  width: 100%;
+}
+
+.search form {
+  margin: auto;
+  width: 30rem;
+  padding-top: 1rem
+}
+
+.search form input {
+  width: 100%;
+  border: none;
+  background-image: linear-gradient(to right, rgb(235, 231, 231), rgb(139, 136, 136));
+  padding: 1rem;
+  box-shadow: inset 3px 5px 5px rgb(65, 63, 63);
+  border-radius: 2rem;
+}
+
 .signOut {
   padding: .4rem;
   background-image: linear-gradient(to right, rgb(34, 32, 32), rgb(51, 32, 32));
@@ -61,17 +81,22 @@ a {
   height: calc(100vh - 80px);
   display: grid;
   place-items: center;
+  background-image: linear-gradient(to right, rgb(229, 226, 226), rgb(243, 237, 237));
+
 }
 
 .cpContainer {
-  width: 500px;
+  width: 35rem;
   height: auto;
-  padding: 20px;
-  background-color: black;
+  padding: 2rem;
+
   border-radius: 12px;
   color: white;
   display: flex;
   flex-direction: column;
+  background-image: linear-gradient(to right, rgb(34, 32, 32), rgb(51, 32, 32));
+  font-family: 'Skranji',
+    cursive;
 }
 
 .cpContainer h1 {

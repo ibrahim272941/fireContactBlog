@@ -38,22 +38,21 @@ const Home = ({ isAuth }) => {
     const postDoc = doc(db, "posts", id);
     await deleteDoc(postDoc);
   };
-  const handleSubmit = (e) => {
+  const handleOnChange = (e) => {
     e.preventDefault();
-    const result = postList.filter((post) => {
-      return searchTerm !== ""
-        ? post.title.toLowerCase().includes(searchTerm)
-        : post;
-    });
-    setPostList(result);
-    setSearchTerm("");
+    let txt = e.target.value;
+    setSearchTerm(txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
   };
+  const result = postList.filter((post) => {
+    return searchTerm !== "" ? post.title.includes(searchTerm) : post;
+  });
+
   return (
     <>
       <div className="search">
-        <form action="" onSubmit={handleSubmit}>
+        <form action="">
           <input
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={handleOnChange}
             value={searchTerm}
             type="text"
             placeholder="Search Thema"
@@ -61,7 +60,7 @@ const Home = ({ isAuth }) => {
         </form>
       </div>
       <div className="homePage">
-        {postList.map((post, i) => {
+        {result.map((post, i) => {
           return (
             <div key={i} className="mainPost">
               <div className="post">
