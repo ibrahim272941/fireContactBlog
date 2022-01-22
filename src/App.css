@@ -384,3 +384,35 @@ textarea {
 
   width: 100%;
 }
+
+@media(max-width:750px) {
+  .detailsPage {
+    width: 80%;
+  }
+
+  .cpContainer {
+    width: 80%;
+  }
+
+}
+
+@media(max-width:550px) {
+  nav {
+
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 15rem;
+
+  }
+
+  .navTitle {
+    font-size: 9rem;
+  }
+
+  .navNavigate {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
